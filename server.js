@@ -2,7 +2,6 @@ const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
 const cors = require('cors');
-const admin = require('firebase-admin');
 
 const app = express();
 const server = http.createServer(app);
@@ -17,12 +16,6 @@ app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
-
-// Configuración Firebase (reemplazar con tus credenciales)
-// const serviceAccount = require('./serviceAccountKey.json');
-// admin.initializeApp({
-//   credential: admin.credential.cert(serviceAccount)
-// });
 
 const connectedDevices = new Map();
 const parentDevices = new Map();
